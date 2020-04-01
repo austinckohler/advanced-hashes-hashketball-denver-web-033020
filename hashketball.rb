@@ -78,7 +78,9 @@ end
  
 def shoe_size(player_n)
   game_hash.each do |home_away, value|
+    # binding.pry
     value[:players].each do |player|
+      # binding.pry
       return player[:shoe] if player[:player_name] == player_n
       end
     end
@@ -88,7 +90,8 @@ def shoe_size(player_n)
 def team_colors(team_n)
   game_hash.each do |home_away, value|
       if value[:team_name] == team_n 
-      return value[:colors].map
+      return value[:colors].map #why did i .maps /// nolan :colors is already an array and didn't need a new array on top of that 
+      # binding.pry
       end
     end
   end
@@ -97,6 +100,7 @@ def team_colors(team_n)
 def team_names
 game_hash.map do |home_away, value|
   value[:team_name]
+  # binding.pry
 end
 end
 
@@ -104,8 +108,10 @@ end
 def player_numbers(team_n)
 game_hash.each do |home_away, value|
   if value[:team_name] == team_n 
-   return value[:players].map do |player|
+    # binding.pry
+   return value[:players].map do |player|ç
      player[:number]
+    # binding.pry
  end
 end
 end
